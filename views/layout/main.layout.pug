@@ -1,0 +1,14 @@
+doctype html
+html(lang="ko")
+	head
+		include ../include/head.inc.pug
+	body
+		include ../include/header.inc.pug
+		.main-banner
+			block mainBanner
+		.main-wrapper
+			.cate-wrapper
+				block cateWrapper
+			.list-wrapper
+				block listWrapper
+		include ../include/footer.inc.pug

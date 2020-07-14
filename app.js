@@ -23,7 +23,7 @@ app.use('/', express.static(publicPath));
 */
 
 app.get('/index', (req, res, next) => {
-
+	res.render('index/index.pug');
 });
 
 app.get('/shop', (req, res, next) => {
