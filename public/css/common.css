@@ -7,9 +7,11 @@ header .logo {font-size: 1.5rem; color: #1c3358;}
 header .navi-wrapper {display: flex;}
 header .navi {padding: 1rem; cursor: pointer;}
 header .navi:first-child {position: relative;}
-header .navi:first-child > .cate-wrapper {position: absolute; background-color: #555; color: #fff; width: 120px; margin-top: 0.5rem; z-index: 999;}
+header .navi:first-child > .cate-wrapper {position: absolute; background-color: #555; color: #fff; width: 120px; margin-top: 0.5rem; z-index: 999; display: none;}
 header .navi:first-child > .cate-wrapper > .cate {padding: 0.5rem; border-bottom: 1px solid #999;}
 header a {text-decoration: none; color: inherit;}
 header a:hover {text-decoration: none; color: inherit;}
 header a:visited {text-decoration: none; color: inherit;}
 header a:active {text-decoration: none; color: inherit;}
+
+.wrapper {max-width: 1600px; margin: auto;}

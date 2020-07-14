@@ -1,7 +1,5 @@
-/**************** 공통사항 *****************/
-
-
-/**************** header *****************/
-
-
-/**************** footer *****************/
+.main-wrapper {display: flex;}
+.main-wrapper .cate-wrapper {flex: 25% 0 0; background-color: #eee; padding: 1rem;}
+.main-wrapper .cate-wrapper .cate {padding: 2rem;}
+.main-wrapper .cate-wrapper .cate a {color: inherit; font-size: 1.5rem; font-weight: 500;}
+.main-wrapper .list-wrapper {flex: 75% 0 0;}

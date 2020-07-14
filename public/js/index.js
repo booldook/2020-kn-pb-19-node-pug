@@ -1,13 +1,13 @@
-/**************** 전역설정 *****************/
+(function(){
 
+	$(".navi-wrapper .navi").eq(0).hover(onHover, onLeave);
+	
+	function onHover() {
+		$(this).find(".cate-wrapper").stop().slideDown(300);
+	}
+	
+	function onLeave() {
+		$(this).find(".cate-wrapper").stop().slideUp(300);
+	}
 
-
-/**************** 사용자 지정 *****************/
-
-
-
-/**************** 이벤트 콜백 *****************/
-
-
-
-/**************** 이벤트 등록 *****************/
+})();
