@@ -23,7 +23,11 @@ app.use('/', express.static(publicPath));
 */
 
 app.get('/index', (req, res, next) => {
-	res.render('index/index.pug');
+	const pug = {
+		css: "index",
+		js: "index"
+	}
+	res.render('index/index.pug', pug);
 });
 
 app.get('/shop', (req, res, next) => {
