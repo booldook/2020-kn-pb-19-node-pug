@@ -55,15 +55,19 @@ app.get('/cart', (req, res, next) => {
 });
 
 app.get('/pay', (req, res, next) => {
-
+	next(new Error());
 });
 
 app.use((req, res, next) => {
-	const pug = { code: '404', msg: '요청하신 페이지를 찾을 수 없습니다.' }
-	res.render('error.pug', pug);
+	const err = new Error();
+	err.code = 404;
+	err.msg = '요청하신 페이지를 찾을 수 없습니다.';
+	next(err);
 });
 
 app.use((error, req, res, next) => {
-	const pug = { code: '404', msg: '요청하신 페이지를 찾을 수 없습니다.' }
+	code = error.code || 500;
+	msg = error.msg || '서버 내부 오류입니다. 관리자에게 문의하세요.';
+	const pug = { code, msg }
 	res.render('error.pug', pug);
 });
