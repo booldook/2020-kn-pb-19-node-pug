@@ -10,8 +10,6 @@ app.set('view engine', 'pug');
 app.set('views', viewsPath);
 app.locals.pretty = true;
 
-app.use('/', express.static(publicPath));
-
 /*
 /index				-> 메인페이지 	- index/index.pug
 /shop 				-> 상품리스트 	- shop/list.pug
@@ -21,6 +19,12 @@ app.use('/', express.static(publicPath));
 /cart					-> 장바구니			- cart/cart.pug
 /pay					-> 결제페이지		- pay/pay.pug
 */
+
+app.use('/', express.static(publicPath));
+
+app.get('/', (req, res, next) => {
+	res.redirect("/index");
+});
 
 app.get('/index', (req, res, next) => {
 	const pug = {
@@ -52,4 +56,14 @@ app.get('/cart', (req, res, next) => {
 
 app.get('/pay', (req, res, next) => {
 
+});
+
+app.use((req, res, next) => {
+	const pug = { code: '404', msg: '요청하신 페이지를 찾을 수 없습니다.' }
+	res.render('error.pug', pug);
+});
+
+app.use((error, req, res, next) => {
+	const pug = { code: '404', msg: '요청하신 페이지를 찾을 수 없습니다.' }
+	res.render('error.pug', pug);
 });

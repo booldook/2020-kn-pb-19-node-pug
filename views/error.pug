@@ -1,0 +1,11 @@
+doctype html
+html(lang="ko")
+	head
+		link(rel="stylesheet", href="/css/all.min.css")
+		link(rel="stylesheet", href="/css/base.css")
+	body
+		.wrapper(style="padding: 3rem; max-width: 1200px; margin: auto;")
+			img.icon(src=`/img/${code}.png` style="margin-bottom: 1rem;")
+			.code(style="font-size: 1.75rem; color: #222; margin-bottom: .5rem;")= `${code} Error`
+			.comment(style="color: #555; padding: 1rem; font-size: 1.25rem;")= msg
+			a.link(href="/" style="padding: 1rem;") 메인페이지로 돌아가기
