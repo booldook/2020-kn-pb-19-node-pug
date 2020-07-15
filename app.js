@@ -4,6 +4,10 @@ const path = require('path');
 const publicPath = path.join(__dirname, './public');
 const viewsPath = path.join(__dirname, './views');
 
+const abc = require('./modules/util');
+const txt = abc();
+console.log(txt);
+
 app.listen(3000, () => { console.log("http://127.0.0.1:3000") });
 
 app.set('view engine', 'pug');
