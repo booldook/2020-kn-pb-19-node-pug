@@ -4,9 +4,8 @@ const path = require('path');
 const publicPath = path.join(__dirname, './public');
 const viewsPath = path.join(__dirname, './views');
 
-const abc = require('./modules/util');
-const txt = abc();
-console.log(txt);
+const indexRouter = require('./router');
+
 
 app.listen(3000, () => { console.log("http://127.0.0.1:3000") });
 
@@ -25,18 +24,8 @@ app.locals.pretty = true;
 */
 
 app.use('/', express.static(publicPath));
+app.use('/', indexRouter);
 
-app.get('/', (req, res, next) => {
-	res.redirect("/index");
-});
-
-app.get('/index', (req, res, next) => {
-	const pug = {
-		css: "index",
-		js: "index"
-	}
-	res.render('index/index.pug', pug);
-});
 
 app.get('/shop', (req, res, next) => {
 
